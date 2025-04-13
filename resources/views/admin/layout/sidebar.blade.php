@@ -36,19 +36,20 @@
                         Products
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.orders.index')}}">
+                        <i class="fas fa-bag-shopping "></i>
+                        Orders
+                    </a>
+                </li>
             </ul>
             <hr class="my-3">
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2"
-                       onclick="document.getElementById('AdminLogoutForm').submit()"
-                        href="#">
-                        <svg class="bi">
-                            <use xlink:href="#door-closed" />
-                        </svg>
-                        Sign out
+                    <a class="nav-link pastel-nav-link text-danger" href="#" onclick="document.getElementById('AdminLogoutForm').submit()">
+                        <i class="fas fa-sign-out-alt me-2"></i> Sign out
                     </a>
-                    <form id="AdminLogoutForm" action="{{route('admin.logout')}}" method="post">
+                    <form id="AdminLogoutForm" action="{{route('admin.logout')}}" method="POST" class="d-none">
                         @csrf
                     </form>
                 </li>

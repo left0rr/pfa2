@@ -1,0 +1,58 @@
+.synthwave-header {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    border-bottom: 2px solid #FF9FF3;
+    box-shadow: 0 0 15px rgba(255, 159, 243, 0.5);
+}
+.logo-image {
+    transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+    filter: drop-shadow(0 0 5px #FECA57);
+}
+
+.nav-link {
+    color: #fff !important;
+    margin: 0 10px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FECA57 !important;
+    text-shadow: 0 0 5px rgba(254, 202, 87, 0.7);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FF9FF3;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.cart-has-items {
+    color: #FECA57 !important;
+    text-shadow: 0 0 5px rgba(254, 202, 87, 0.7);
+}
+
+
+.bi {
+    margin-right: 5px;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

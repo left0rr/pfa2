@@ -72,13 +72,13 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{route('admin.products.edit',$product->id)}}" class="btn btn-sm btn-warning">
+                                        <a href="{{route('admin.products.edit',$product->slug)}}" class="btn btn-sm btn-warning">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="deleteItem({{$product->id}})" class="btn btn-sm btn-danger">
                                             <i class="fas fa-trash"></i>
                                         </a>
-                                        <form id="{{$product->id}}" action="{{route('admin.products.destroy',$product->id)}}" method="POST">
+                                        <form id="{{$product->id}}" action="{{route('admin.products.destroy',$product->slug)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>
