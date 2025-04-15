@@ -1,7 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import Alert from "../layouts/Alert.jsx";
-import {persistor} from "../../redux/store/index.js";
 import {decrementQty, incrementQty, removeFromCart} from "../../redux/slices/cartSlice.js";
 import {Link} from "react-router-dom";
 import { ChevronUp, ChevronDown } from "lucide-react";

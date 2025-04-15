@@ -14,7 +14,6 @@ export default function Header() {
     const { isLoggedIn, token, user } = useSelector(state => state.user);
 
     const dispatch = useDispatch();
-    const location = useLocation();
     useEffect(() => {
         const getLoggedInUser = async () => {
             try {

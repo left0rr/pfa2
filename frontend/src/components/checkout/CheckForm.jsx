@@ -1,5 +1,5 @@
 
-
+import Spinner from "../layouts/Spinner.jsx";
 import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
@@ -50,6 +50,11 @@ export default function CheckForm() {
             // Make sure to disable form submission until Stripe.js has loaded.
             return;
         }
+        if (!cartItems.length) {
+            toast.error("Your cart is empty or outdated.");
+            return;
+        }
+
 
         setIsProcessing(true);
 
@@ -67,10 +72,10 @@ export default function CheckForm() {
         ) {
             setMessage(response.error.message);
         }
-        else if(response.paymentIntent.id) {
-            //display success message or redirect user
-            storeOrder()
+        else if (response.paymentIntent && response.paymentIntent.id) {
+            storeOrder();
         }
+
 
         setIsProcessing(false);
     };
@@ -82,9 +87,9 @@ export default function CheckForm() {
         <form id="payment-form" onSubmit={handleSubmit}>
             <PaymentElement id="payment-element" />
             <button disabled={isProcessing || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isProcessing ? "Processing ... " : "Pay now"}
-        </span>
+              <span id="button-text">
+                {isProcessing ? <Spinner /> : "Pay now"}
+              </span>
             </button>
             {/* Show any error or success messages */}
             {message && <div id="payment-message">{message}</div>}

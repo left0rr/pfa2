@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {toast} from "react-toastify";
 import {axiosRequest, getConfig} from "../../helpers/config.js";
 import Spinner from "../layouts/Spinner.jsx";
@@ -11,6 +11,7 @@ export default function UpdateUser({profile}) {
         address: user?.address,
         city: user?.city,
         zip_code: user?.zip_code,
+        country: user?.country,
     });
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
@@ -92,6 +93,18 @@ export default function UpdateUser({profile}) {
                                     className="form-control"
                                     required
                                     id="zip_code"
+                                />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="country" className="form-label">Country*</label>
+                                <input
+                                    type="text"
+                                    name="country"
+                                    value={userInfo.country || ''}
+                                    onChange={handleChange}
+                                    className="form-control"
+                                    required
+                                    id="country"
                                 />
                             </div>
                             {

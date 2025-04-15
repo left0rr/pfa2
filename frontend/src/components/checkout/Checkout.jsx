@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { useSelector } from "react-redux";
 import Coupon from "../coupon/Coupon.jsx";
 import { toast } from "react-toastify";
-import {removeFromCart, setValidCoupon} from "../../redux/slices/cartSlice.js";
+import { setValidCoupon} from "../../redux/slices/cartSlice.js";
 import { useDispatch } from "react-redux";
 import {Link, useNavigate} from "react-router-dom";
 import Alert from "../layouts/Alert.jsx";
@@ -52,7 +52,8 @@ export default function Checkout() {
                                         <img src={item.image}
                                              width={60}
                                              height={60}
-                                             className="card img-fluid rounded me-2"/>
+                                             className="card img-fluid rounded me-2"
+                                             alt={item.name}/>
                                              <div className="d-flex flex-column">
                                                  <h5>
                                                     <strong>{item.name}</strong>

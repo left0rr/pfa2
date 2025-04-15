@@ -5,7 +5,7 @@ import ProfileSidebar from "./partials/ProfileSidebar.jsx";
 import Alert from '../layouts/Alert.jsx';
 
 export default function Orders() {
-    const { user, isLoggedIn, token } = useSelector(state => state.user)
+    const { user, isLoggedIn } = useSelector(state => state.user)
     const navigate = useNavigate();
     const [ordersToShow, setOrdersToShow] = useState(5);
 
@@ -43,7 +43,7 @@ export default function Orders() {
                             <tbody>
                             {
                                 user?.orders?.slice(0, ordersToShow).map((order, index) => (
-                                    <tr key={order.id}>
+                                    <tr key={order.index}>
                                         <th>{index + 1}</th>
                                         <td>
                                             <div className="d-flex flex-column">

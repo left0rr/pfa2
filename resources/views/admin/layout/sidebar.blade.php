@@ -8,7 +8,7 @@
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.index')}}">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-sack-dollar"></i>
                         Dashboard
                     </a>
                 </li>
@@ -40,6 +40,12 @@
                     <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.orders.index')}}">
                         <i class="fas fa-bag-shopping "></i>
                         Orders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.users.index')}}">
+                        <i class="fas fa-users-gear "></i>
+                        Users
                     </a>
                 </li>
             </ul>
