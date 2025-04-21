@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     options {
-        // Prevent Jenkins from doing an automatic SCM checkout before pipeline starts
         skipDefaultCheckout(true)
     }
 
@@ -16,14 +15,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo '📥 Cloning repository...'
-                checkout scm
+                echo '📥 Manually cloning repository...'
+                sh 'rm -rf pfa2 && git clone https://github.com/left0rr/pfa2.git'
             }
         }
 
         stage('Build Laravel Backend') {
             steps {
-                dir('.') {
+                dir('pfa2') {
                     script {
                         echo '🔨 Building Laravel Backend image...'
                         docker.build(env.BACKEND_IMAGE, '.')
@@ -34,7 +33,7 @@ pipeline {
 
         stage('Build React Frontend') {
             steps {
-                dir('frontend') {
+                dir('pfa2/frontend') {
                     script {
                         echo '🔧 Building React Frontend image...'
                         docker.build(env.FRONTEND_IMAGE, '.')
@@ -45,7 +44,7 @@ pipeline {
 
         stage('Build Rasa Server') {
             steps {
-                dir('domi') {
+                dir('pfa2/domi') {
                     script {
                         echo '🤖 Building Rasa Server image...'
                         docker.build(env.RASA_IMAGE, '.')
@@ -56,7 +55,7 @@ pipeline {
 
         stage('Build Rasa Actions') {
             steps {
-                dir('domi/actions') {
+                dir('pfa2/domi/actions') {
                     script {
                         echo '⚙️ Building Rasa Actions Server image...'
                         docker.build(env.RASA_ACTIONS_IMAGE, '.')
