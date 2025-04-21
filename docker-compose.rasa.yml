@@ -4,7 +4,7 @@ services:
   rasa-server:
     build:
       context: ./domi
-      dockerfile: Dockerfile
+      dockerfile: domi/Dockerfile
     image: pfa2-rasa-server
     ports:
       - "5005:5005"
@@ -16,7 +16,7 @@ services:
   rasa-actions:
     build:
       context: ./domi/actions
-      dockerfile: Dockerfile
+      dockerfile: domi/Dockerfile
     image: pfa2-rasa-actions
     ports:
       - "5055:5055"
