@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     options {
-        skipDefaultCheckout(true)  // Skip default checkout
+        skipDefaultCheckout(true)
     }
 
     environment {
@@ -13,10 +13,9 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                echo '📥 Manually cloning repository...'
-                // Manually clone the repo to avoid Git errors
+                echo '📥 Cloning repository...'
                 sh 'rm -rf pfa2 && git clone https://github.com/left0rr/pfa2.git'
             }
         }
@@ -24,8 +23,8 @@ pipeline {
         stage('Build Laravel Backend') {
             steps {
                 dir('pfa2') {
+                    echo '🔨 Building Laravel Backend image...'
                     script {
-                        echo '🔨 Building Laravel Backend image...'
                         docker.build(env.BACKEND_IMAGE, '.')
                     }
                 }
@@ -35,8 +34,8 @@ pipeline {
         stage('Build React Frontend') {
             steps {
                 dir('pfa2/frontend') {
+                    echo '🔧 Building React Frontend image...'
                     script {
-                        echo '🔧 Building React Frontend image...'
                         docker.build(env.FRONTEND_IMAGE, '.')
                     }
                 }
@@ -46,8 +45,8 @@ pipeline {
         stage('Build Rasa Server') {
             steps {
                 dir('pfa2/domi') {
+                    echo '🤖 Building Rasa Server image...'
                     script {
-                        echo '🤖 Building Rasa Server image...'
                         docker.build(env.RASA_IMAGE, '.')
                     }
                 }
@@ -57,8 +56,8 @@ pipeline {
         stage('Build Rasa Actions') {
             steps {
                 dir('pfa2/domi/actions') {
+                    echo '⚙️ Building Rasa Actions Server image...'
                     script {
-                        echo '⚙️ Building Rasa Actions Server image...'
                         docker.build(env.RASA_ACTIONS_IMAGE, '.')
                     }
                 }
