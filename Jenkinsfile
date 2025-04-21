@@ -35,12 +35,13 @@ pipeline {
             steps {
                 dir('pfa2/frontend') {
                     echo '🔧 Building React Frontend image...'
-                    script {
+            script {
                         docker.build(env.FRONTEND_IMAGE, '.')
                     }
                 }
             }
         }
+
 
         stage('Build Rasa Server') {
             steps {
