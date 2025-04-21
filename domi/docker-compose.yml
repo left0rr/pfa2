@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  rasa-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/app
+    depends_on:
+      - rasa-actions
+
+  rasa-actions:
+    build:
+      context: ./actions
+      dockerfile: Dockerfile
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    environment:
+      - ACTION_SERVER_PORT=5055
