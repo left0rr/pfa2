@@ -34,7 +34,7 @@
                                     <input type="number" class="form-control @error('qty') is-invalid @enderror" id="floatingInput"
                                            name="qty" placeholder="Quantity"
                                            value="{{ old('qty') }}">
-                                    <label for="floatingInput">Name of color*</label>
+                                    <label for="floatingInput">Quantity*</label>
                                     @error('qty')
                                     <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>

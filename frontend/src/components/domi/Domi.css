@@ -64,6 +64,9 @@
 }
 
 .fake-chatbot-messages {
+
+    /* existing styles... */
+    max-height: 400px; /* or whatever fits your layout */
     flex: 1;
     padding: 12px;
     overflow-y: auto;
