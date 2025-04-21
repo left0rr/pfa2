@@ -2,6 +2,7 @@ version: "3.9"
 services:
     app:
         build: .
+        image: pfa2-backend
         container_name: laravel_app
         volumes:
             - .:/var/www/html
@@ -13,6 +14,7 @@ services:
     frontend:
         build:
             context: ./frontend
+        image: pfa2-frontend
         container_name: react_frontend
         ports:
             - 3000:3000

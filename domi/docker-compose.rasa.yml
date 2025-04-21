@@ -3,22 +3,24 @@ version: '3.8'
 services:
   rasa-server:
     build:
-      context: .
+      context: ./domi
       dockerfile: Dockerfile
+    image: pfa2-rasa-server
     ports:
       - "5005:5005"
     volumes:
-      - .:/app
+      - ./domi:/app
     depends_on:
       - rasa-actions
 
   rasa-actions:
     build:
-      context: ./actions
+      context: ./domi/actions
       dockerfile: Dockerfile
+    image: pfa2-rasa-actions
     ports:
       - "5055:5055"
     volumes:
-      - ./actions:/app/actions
+      - ./domi/actions:/app/actions
     environment:
       - ACTION_SERVER_PORT=5055
