@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+  - story: fashion question
+    steps:
+      - intent: ask_fashion
+      - action: action_fashion_response
+
+  - story: greet and goodbye
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: gender selection
+    steps:
+      - intent: gender_request
+      - action: utter_gender

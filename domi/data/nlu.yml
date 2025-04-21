@@ -1,0 +1,46 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hello
+      - Hi there
+      - Good morning
+      - Hey!
+
+  - intent: goodbye
+    examples: |
+      - Goodbye
+      - See you
+      - Bye
+
+  - intent: gender_request
+    examples: |
+      - Can you suggest an outfit for me?
+      - I need some fashion advice.
+      - Any outfit suggestions?
+
+  - intent : asking_bot
+    examples: |
+      - are u a bot ?
+      - are you a bot?
+      - Domi, are you even real?
+      - Are you human, Domi?
+
+  - intent: ask_fashion
+    examples: |
+      - How to dress for a barbecue in summer (man)?
+      - How to dress for a barbecue in summer (woman)?
+      - How to dress for a wedding in autumn (man)?
+      - How to dress for a job interview in winter (woman)?
+      - How to dress for a romantic date in spring (man)?
+      - How to dress for a casual outing in autumn (woman)?
+      - How to dress for a family gathering in summer (man)?
+      - How to dress for a dinner at a restaurant in winter (woman)?
+      - How to dress for a hiking in spring (woman)?
+      - How to dress for a prom in autumn (man)?
+      - How to dress for a shopping day in summer (woman)?
+      - How to dress for a barbecue in summer (man)?
+      - How to dress for a wedding in autumn (woman)?
+      - How to dress for a job interview in winter (woman)?
+      - How to dress for a shopping day in summer (woman)?

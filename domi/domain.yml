@@ -1,0 +1,54 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - gender_request
+  - ask_fashion
+  - demander_vetement
+  - asking_bot
+
+entities:
+  - season
+  - gender
+  - occasion
+
+slots: {}
+  #season:
+    #type: text
+    #mappings:
+      #- type: from_entity
+        #entity: season
+  #gender:
+    #type: text
+   # mappings:
+    #  - type: from_entity
+    #    entity: gender
+  #occasion:
+   # type: text
+    #mappings:
+     # - type: from_entity
+      #  entity: occasion
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+    - text: "What vibe are you going for today? Something casual and comfy, or are you aiming for a more stylish look? 🤔"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_asking_bot:
+    - text: "Hi, I'm Domi 💜."
+    - text: "Bot? Yes. Boring? Never. I’ve got more fashion tips than your closet has clothes! 💅"
+    - text: "I’m not human, I’m Domi — your virtual fashion assistant trained to slay every outfit."
+    - text: "Absolutely, I’m a chatbot. But when it comes to fashion? I’ve got human-level taste!."
+    - text: "I might be a bot, but my outfit game is very real. Wanna see?"
+    - text: "Hey hey! It’s Domi, your fashion buddy 🕶️ Let me style you up!"
+
+  utter_fashion_response:
+    - text: "Désolé, je ne comprends pas votre question."
+  utter_gender:
+    - text: "Please specify if you are looking for advice for men or women and please specify the season and the occasion.😍"
+
+
+actions:
+  - action_fashion_response
