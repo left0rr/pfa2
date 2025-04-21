@@ -1,12 +1,8 @@
-
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig({
-    root: './', // already defaults to this, adjust if needed
-    build: {
-        rollupOptions: {
-            input: 'public/index.html' // tell Vite where to look
-        }
-    }
+  plugins: [react()],
 })
 
