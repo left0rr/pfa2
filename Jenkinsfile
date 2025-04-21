@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     options {
-        skipDefaultCheckout(true)
+        skipDefaultCheckout(true)  // Skip default checkout
     }
 
     environment {
@@ -16,6 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '📥 Manually cloning repository...'
+                // Manually clone the repo to avoid Git errors
                 sh 'rm -rf pfa2 && git clone https://github.com/left0rr/pfa2.git'
             }
         }
