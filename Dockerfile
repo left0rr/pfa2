@@ -13,6 +13,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 COPY . .
+RUN mkdir -p /var/www/html/storage && \
+    chown -R www-data:www-data /var/www/html && \
+    chmod -R 775 /var/www/html/storage
+
+RUN git config --global --add safe.directory /var/www/html
 
 RUN composer install
 

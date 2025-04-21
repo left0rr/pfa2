@@ -1,5 +1,0 @@
-rules:
-- rule: Say hi when the user says hi
-  steps:
-    - intent: greet
-    - action: utter_greet
