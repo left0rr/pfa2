@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-backend
+  labels:
+    app: laravel-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel-backend
+  template:
+    metadata:
+      labels:
+        app: laravel-backend
+    spec:
+      containers:
+        - name: laravel
+          image: pfa2-backend:latest
+          ports:
+            - containerPort: 9000
+          envFrom:
+            - secretRef:
+                name: laravel-env
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-service
+spec:
+  selector:
+    app: laravel-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9000
+  type: ClusterIP
