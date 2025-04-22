@@ -5,7 +5,6 @@ WORKDIR /app
 
 # Copie ciblée uniquement des fichiers nécessaires à Rasa
 COPY data/ /app/data/
-COPY models/ /app/models/
 COPY config.yml /app/
 COPY domain.yml /app/
 COPY credentials.yml /app/
