@@ -3,7 +3,7 @@ FROM rasa/rasa-sdk:3.6.2
 WORKDIR /app
 
 COPY actions/ /app/actions/
-COPY actions/requirements.txt /app/
+COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
