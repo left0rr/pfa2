@@ -10,7 +10,7 @@ COPY domain.yml /app/
 COPY credentials.yml /app/
 COPY endpoints.yml /app/
 
-USER 1001
+#USER 1001
 
 RUN rasa train
 
