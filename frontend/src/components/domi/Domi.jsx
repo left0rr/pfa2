@@ -106,10 +106,16 @@ const Domi = () => {
             )}
 
             {!isOpen && (
-                <div className="chat-toggle-button" onClick={() => setIsOpen(true)}>
+                <div className="chat-toggle-button" onClick={() => {
+                    setIsOpen(true);
+                    if (messages.length === 0) {
+                        setMessages([{ from: "bot", text: "👋 Hi there! I'm Domi, your fashion assistant!" }]);
+                    }
+                }}>
                     <img src="/domi.png" alt="Chat Toggle" />
                 </div>
             )}
+
         </>
     );
 };

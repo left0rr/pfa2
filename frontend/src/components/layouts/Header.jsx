@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 import './Header.css'; // You'll create this for custom styles
-import logo from '../../../public/darling-shop-logo2.png';
+import logo from '/darling-shop-logo2.png';
 import {axiosRequest, getConfig} from "../../helpers/config.js";
 import { useDispatch } from "react-redux";
 import {setCurrentUser, setLoggedInOut, setToken} from "../../redux/slices/userSlice.js";

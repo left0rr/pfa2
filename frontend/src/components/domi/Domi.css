@@ -1,5 +1,17 @@
 /* Synthwave Pastel Theme */
-
+.chat-toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff61a6;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff61a6bb;
+    z-index: 10000;
+    transition: transform 0.2s, bottom 0.3s ease;
+}
 .fake-chatbot-container {
     position: fixed;
     bottom: 90px;
