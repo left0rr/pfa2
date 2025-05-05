@@ -9,17 +9,17 @@ use App\Http\Controllers\Admin\SizeController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[AdminController::class,'login'])->name('admin.login');
-Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
+Route::get('/', [AdminController::class, 'login'])->name('admin.login');
+Route::post('admin/auth', [AdminController::class, 'auth'])->name('admin.auth');
 
 Route::middleware('admin')->group(function () {
     Route::prefix('admin')->group(function () {
-        Route::get('dashboard',[AdminController::class,'index'])
+        Route::get('dashboard', [AdminController::class, 'index'])
             ->name('admin.index');
-        Route::post('logout',[AdminController::class,'logout'])
+        Route::post('logout', [AdminController::class, 'logout'])
             ->name('admin.logout');
         //colors Routes
-        Route::resource('colors',ColorController::class,[
+        Route::resource('colors', ColorController::class,[
             'names'=> [
                 'index'=>'admin.colors.index',
                 'create'=>'admin.colors.create',
@@ -29,7 +29,7 @@ Route::middleware('admin')->group(function () {
                 'destroy'=>'admin.colors.destroy']
         ]);
     //sizes Routes
-        Route::resource('sizes',SizeController::class,[
+        Route::resource('sizes', SizeController::class,[
             'names'=> [
                 'index'=>'admin.sizes.index',
                 'create'=>'admin.sizes.create',
@@ -39,7 +39,7 @@ Route::middleware('admin')->group(function () {
                 'destroy'=>'admin.sizes.destroy']
         ]);
     //coupons routes
-        Route::resource('coupons',CouponController::class,[
+        Route::resource('coupons', CouponController::class,[
             'names'=> [
                 'index'=>'admin.coupons.index',
                 'create'=>'admin.coupons.create',
@@ -49,7 +49,7 @@ Route::middleware('admin')->group(function () {
                 'destroy'=>'admin.coupons.destroy']
         ]);
         // products routes
-        Route::resource('products',ProductController::class,[
+        Route::resource('products', ProductController::class,[
             'names'=> [
                 'index'=>'admin.products.index',
                 'create'=>'admin.products.create',
@@ -59,17 +59,17 @@ Route::middleware('admin')->group(function () {
                 'destroy'=>'admin.products.destroy']
         ]);
         //orders routes
-        Route::get('orders',[OrderController::class,'index'])
+        Route::get('orders', [OrderController::class,'index'])
             ->name('admin.orders.index');
-        Route::get('update/{order}/order',[OrderController::class,'updateDeliveryDate'])
+        Route::get('update/{order}/order', [OrderController::class,'updateDeliveryDate'])
             ->name('admin.orders.update');
-        Route::delete('delete/{order}/order',[OrderController::class,'delete'])
+        Route::delete('delete/{order}/order', [OrderController::class,'delete'])
             ->name('admin.orders.delete');
 
         //users routes
-        Route::get('users',[UserController::class,'index'])
+        Route::get('users', [UserController::class,'index'])
             ->name('admin.users.index');
-        Route::delete('delete/{user}/user',[UserController::class,'delete'])
+        Route::delete('delete/{user}/user', [UserController::class,'delete'])
             ->name('admin.users.delete');
     });
 });
