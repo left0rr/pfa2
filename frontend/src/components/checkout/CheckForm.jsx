@@ -1,8 +1,7 @@
 
 import Spinner from "../layouts/Spinner.jsx";
-import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
-import { useStripe, useElements } from "@stripe/react-stripe-js";
+import { useStripe, useElements, PaymentElement} from "@stripe/react-stripe-js";
 import {axiosRequest, getConfig} from "../../helpers/config.js";
 import {toast} from "react-toastify";
 import {setCurrentUser} from "../../redux/slices/userSlice.js";

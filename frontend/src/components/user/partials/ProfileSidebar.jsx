@@ -1,11 +1,10 @@
 import React, {useRef, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import renderValidationErrors from "../../custom/renderValidationErrors.jsx";
 import {axiosRequest, getConfig} from "../../../helpers/config.js";
 import {setCurrentUser} from "../../../redux/slices/userSlice.js";
 import {toast} from "react-toastify";
-import { useLocation } from "react-router-dom";
 
 
 export default function ProfileSidebar ()  {

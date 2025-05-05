@@ -1,11 +1,10 @@
 import React, {useEffect} from 'react'
 import {useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 import Stripe from "./Stripe.jsx";
-import { useLocation } from "react-router-dom";
 
 
-export default function payWithStripe() {
+export default function PayWithStripe() {
     const location = useLocation();
     const fromCheckout = location.state?.fromCheckout;
     const { isLoggedIn } = useSelector(state=>state.user)

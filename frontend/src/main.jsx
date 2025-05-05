@@ -8,8 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { store } from "./redux/store/index.js";
-import { persistor } from "./redux/store/index.js";
+import { store, persistor} from "./redux/store/index.js";
 import './index.css'
 import Domi from "./components/domi/Domi.jsx";
 

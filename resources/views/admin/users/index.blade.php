@@ -52,6 +52,7 @@
                     <hr>
                     <div class="card-body">
                         <table class="table">
+                            <caption>List of Users Available in Admin Panel</caption>
                             <thead>
                             <tr>
                                 <th scope="col">#</th>

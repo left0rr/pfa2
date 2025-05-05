@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react'
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Coupon from "../coupon/Coupon.jsx";
 import { toast } from "react-toastify";
 import { setValidCoupon} from "../../redux/slices/cartSlice.js";
-import { useDispatch } from "react-redux";
 import {Link, useNavigate} from "react-router-dom";
 import Alert from "../layouts/Alert.jsx";
 import UpdateUser from "../user/UpdateUser.jsx";

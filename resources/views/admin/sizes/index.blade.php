@@ -19,6 +19,7 @@
                     <hr>
                     <div class="card-body">
                         <table class="table">
+                            <caption>List of Sizes Available in Admin Panel</caption>
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
