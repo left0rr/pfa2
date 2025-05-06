@@ -485,15 +485,6 @@ class ActionFashionResponse(Action):
         # Rechercher la réponse correspondante
         for item in fashion_data['fashion']:
             if item['question'].lower() == user_question.lower():
-                # Choisir aléatoirement l'introduction
-                introductions = [
-                    "Hi, I'm Domi – your personal fashion assistant! 👗 Here's what I'd recommend for you:",
-                    "Greetings, I'm Domi – your expert in all things fashion 👠 Here's a look you'll love:"
-                ]
-                introduction = random.choice(introductions)
-
-                # Envoyer la réponse avec l'introduction
-                dispatcher.utter_message(text=introduction)
                 dispatcher.utter_message(text=item['answer'])
                 return []
 
